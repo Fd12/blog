@@ -4,14 +4,30 @@
 	<title>Document </title>
 </head>
 <body>
+
+
+	{% if messages %}
+	<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+	</ul>
+	{% endif %}
+
+	<a href="{% url 'more:create' %}"><button>Create</button></a>
 	{% for item in post_items %}
 	<ul>
+		<a href="{% url 'more:detail' post_id=item.id %} "><li>{{item.title}}</li>
 		<li>{{item.title}}</li>
 		<li>{{item.content}}</li>
 		<li>{{item.id}}</li>
-
-
+		<a href="{% %url 'more:update' post_id=item_id %} "><button>Detail</button></a>
+		<a href="{% %url 'more:delete' post_id=item_id %} "><button>Delete</button></a>
+		
 	</ul>
- 	{% endfor %}
+	{% endfor %}
+
+
+
 </body>
 </html>

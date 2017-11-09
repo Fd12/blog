@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Post Create</title>
+	<title>Form </title>
 </head>
 <body>
-	<h1>The Post Create Page</h1>
+
+	<form action="{% url 'create' %}" method="POST">
+		{% csrf_token %} 
+		{{form.as_p}}
+	<input type="Submit" value=" Fahad's First button Submit"> 
+    </form>
 </body>
 </html>
