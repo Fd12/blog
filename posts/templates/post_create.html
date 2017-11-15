@@ -5,10 +5,11 @@
 </head>
 <body>
 
-	<form action="{% url 'create' %}" method="POST">
+	<form action="{% url 'posts:create' %}" method="POST">
 		{% csrf_token %} 
 		{{form.as_p}}
 	<input type="Submit" value=" Fahad's First button Submit"> 
     </form>
 </body>
 </html>
+
